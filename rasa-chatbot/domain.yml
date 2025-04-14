@@ -1,0 +1,30 @@
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - ask_weather
+
+entities:
+  - location
+  - time
+
+slots:
+  location:
+    type: text
+  time:
+    type: text
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+  utter_ask_weather:
+    - text: "Sure! Which location do you want to know the weather for?"
+  utter_weather_info:
+    - text: "The weather in {location} at {time} is sunny."
+
+actions:
+  - action_get_weather
+  - action_provide_weather_info

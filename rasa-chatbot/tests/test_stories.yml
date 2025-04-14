@@ -1,0 +1,23 @@
+version: "2.0"
+stories:
+  - story: test greeting
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - story: test goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: test fallback
+    steps:
+      - intent: unknown
+      - action: utter_default
+
+  - story: test order pizza
+    steps:
+      - intent: order_pizza
+      - action: utter_ask_pizza_type
+      - intent: provide_pizza_type
+      - action: utter_confirm_order

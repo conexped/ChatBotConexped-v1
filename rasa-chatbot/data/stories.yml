@@ -1,0 +1,20 @@
+version: "2.0"
+stories:
+  - story: greet and ask for help
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_help
+      - action: utter_help
+
+  - story: order pizza
+    steps:
+      - intent: order_pizza
+      - action: utter_ask_pizza_type
+      - intent: specify_pizza_type
+      - action: utter_confirm_order
+
+  - story: goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
