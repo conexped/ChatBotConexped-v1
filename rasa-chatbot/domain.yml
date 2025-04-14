@@ -4,6 +4,11 @@ intents:
   - affirm
   - deny
   - ask_weather
+  - ask_help
+    - ask_help
+  - ask_information
+  - order_pizza
+  - specify_pizza_type
 
 entities:
   - location
@@ -12,10 +17,20 @@ entities:
 slots:
   location:
     type: text
+    mappings:
+      - type: from_entity
+        entity: location
   time:
     type: text
+    mappings:
+      - type: from_entity
+        entity: time
 
 responses:
+  utter_confirm_order:
+    - text: "Your order has been confirmed!"
+  utter_ask_pizza_type:
+    - text: "What type of pizza would you like to order?"
   utter_greet:
     - text: "Hello! How can I assist you today?"
   utter_goodbye:
@@ -24,6 +39,12 @@ responses:
     - text: "Sure! Which location do you want to know the weather for?"
   utter_weather_info:
     - text: "The weather in {location} at {time} is sunny."
+  utter_information:
+    - text: "Here is the information you requested."
+  utter_default:
+    - text: "I'm sorry, I didn't understand that. Can you rephrase?"
+  utter_help:
+    - text: "How can I assist you? Please let me know."
 
 actions:
   - action_get_weather

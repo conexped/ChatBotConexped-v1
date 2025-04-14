@@ -1,4 +1,4 @@
-version: "3.0"
+version: "3.1"
 
 nlu:
   - intent: greet
@@ -46,3 +46,9 @@ nlu:
       - are you a bot?
       - what is your name?
       - who created you?
+
+  - intent: ask_help
+    examples: |
+      - I need help
+      - Can you assist me?
+      - I need assistance
